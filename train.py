@@ -1,19 +1,41 @@
 import torch
 import torch.nn as nn
 import torch.optim as optim
+import os
 
 from model import DogCatCNN
 from dataset import get_dataloaders
 from utils import calculate_accuracy
 
-train_loader, val_loader = get_dataloaders("dataset/train")
+# ✅ CHECK PATH
+path = r"C:\Users\Priyanka\Desktop\PetImages"
+print("Path exists:", os.path.exists(path))
 
+# ✅ LOAD DATA
+train_loader, val_loader = get_dataloaders(path)
+
+# 🔥 DEBUG (IMPORTANT)
+print("Train batches:", len(train_loader))
+print("Validation batches:", len(val_loader))
+
+# Check classes
+print("Classes:", train_loader.dataset.dataset.classes)
+
+# ❌ STOP IF DATA NOT LOADED
+if len(train_loader) == 0:
+    print("❌ ERROR: Dataset not loading properly")
+    exit()
+
+# ✅ MODEL
 model = DogCatCNN()
 
 loss_fn = nn.CrossEntropyLoss()
 optimizer = optim.Adam(model.parameters(), lr=0.0005)
 
-for epoch in range(10):
+print("🚀 Training started...\n")
+
+# ✅ TRAIN LOOP
+for epoch in range(3):
 
     model.train()
     total_loss = 0
@@ -35,20 +57,7 @@ for epoch in range(10):
 
     print(f"Epoch {epoch+1}, Loss: {avg_loss:.4f}, Val Acc: {val_acc:.4f}")
 
+# ✅ SAVE MODEL
 torch.save(model.state_dict(), "model.pth")
 
-correct = 0
-total = 0
-
-model.eval()   # IMPORTANT
-
-with torch.no_grad():
-    for images, labels in val_loader:
-
-        outputs = model(images)
-        _, predicted = torch.max(outputs,1)
-
-        total += labels.size(0)
-        correct += (predicted == labels).sum().item()
-
-print("Validation Accuracy:", correct/total)
+print("\n✅ Model saved as model.pth")

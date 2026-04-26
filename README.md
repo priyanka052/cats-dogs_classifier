@@ -13,5 +13,6 @@ This project builds a CNN using PyTorch to classify images of dogs and cats.
 
 ## Run
 
-pip install -r requirement.txt  
-python train.py
+pip install -r requirements.txt  
+python train.py  
+streamlit run app.py

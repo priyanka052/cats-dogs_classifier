@@ -1,10 +1,10 @@
+import torch
 def calculate_accuracy(model, loader):
     correct = 0
     total = 0
 
     model.eval()
 
-    import torch
     with torch.no_grad():
         for images, labels in loader:
             outputs = model(images)
