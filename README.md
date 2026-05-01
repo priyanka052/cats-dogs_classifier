@@ -7,21 +7,6 @@ A deep learning web application that classifies images as Dog 🐶 or Cat 🐱 u
 👉 https://cats-dogsclassifier-ac5feq2xkzkip3p7nryhhs.streamlit.app/
 
 
-## App Access
-https://cats-dogsclassifier-ac5feq2xkzkip3p7nryhhs.streamlit.app/
-
-
-## Run
-
-pip install -r requirements.txt  
-python train.py  
-streamlit run app.py
-
-## Snap Shots
-
-<img width="689" height="801" alt="image" src="https://github.com/user-attachments/assets/af3dd475-f065-4cda-9303-62b58220f0cc" />
-=======
-
 ## 🚀 Features
 Upload any image and get instant prediction
 Displays prediction with confidence score
