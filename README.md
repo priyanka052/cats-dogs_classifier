@@ -4,10 +4,12 @@ A deep learning web application that classifies images as Dog 🐶 or Cat 🐱 u
 
 
 ## 🔗 Live Demo
+
 👉 https://cats-dogsclassifier-ac5feq2xkzkip3p7nryhhs.streamlit.app/
 
 
 ## 🚀 Features
+
 Upload any image and get instant prediction
 Displays prediction with confidence score
 Image preprocessing and normalization
@@ -16,6 +18,7 @@ Clean and interactive UI using Streamlit
 
 
 ## 🧠 Model Details
+
 Custom CNN architecture
 Conv → ReLU → MaxPool layers
 Dropout for regularization
@@ -24,10 +27,12 @@ Optimized using Adam optimizer
 
 
 ## 📊 Accuracy
+
 Achieved ~80–85% validation accuracy
 
 
 ## 🛠️ Tech Stack
+
 Python
 PyTorch
 Torchvision
@@ -37,15 +42,16 @@ NumPy
 
 
 ## ▶️ How to Run Locally
+
 pip install -r requirements.txt
 python train.py
 streamlit run app.py
 
 
 ## 📸 Screenshots
+
 Home Page
 ![alt text](image.png)
-
 Prediction Result
 
 ## Project Structure
@@ -59,4 +65,4 @@ cats-dogs-classifier/
 ├── model.pth            # Trained PyTorch model (auto-generated)
 ├── requirements.txt     # Dependencies
 └── README.md            # Project documentation
->>>>>>> ca89ba0 (update readme)
+
